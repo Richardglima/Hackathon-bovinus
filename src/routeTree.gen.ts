@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as FilasRouteImport } from './routes/filas'
+import { Route as MesasRouteImport } from './routes/mesas'
+import { Route as MixRouteImport } from './routes/mix'
+import { Route as QualidadeRouteImport } from './routes/qualidade'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FilasRoute = FilasRouteImport.update({
+  id: '/filas',
+  path: '/filas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MesasRoute = MesasRouteImport.update({
+  id: '/mesas',
+  path: '/mesas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MixRoute = MixRouteImport.update({
+  id: '/mix',
+  path: '/mix',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualidadeRoute = QualidadeRouteImport.update({
+  id: '/qualidade',
+  path: '/qualidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/filas': typeof FilasRoute
+  '/mesas': typeof MesasRoute
+  '/mix': typeof MixRoute
+  '/qualidade': typeof QualidadeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/filas': typeof FilasRoute
+  '/mesas': typeof MesasRoute
+  '/mix': typeof MixRoute
+  '/qualidade': typeof QualidadeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/filas': typeof FilasRoute
+  '/mesas': typeof MesasRoute
+  '/mix': typeof MixRoute
+  '/qualidade': typeof QualidadeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/filas' | '/mesas' | '/mix' | '/qualidade'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/filas' | '/mesas' | '/mix' | '/qualidade'
+  id: '__root__' | '/' | '/filas' | '/mesas' | '/mix' | '/qualidade'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FilasRoute: typeof FilasRoute
+  MesasRoute: typeof MesasRoute
+  MixRoute: typeof MixRoute
+  QualidadeRoute: typeof QualidadeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/filas': {
+      id: '/filas'
+      path: '/filas'
+      fullPath: '/filas'
+      preLoaderRoute: typeof FilasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mesas': {
+      id: '/mesas'
+      path: '/mesas'
+      fullPath: '/mesas'
+      preLoaderRoute: typeof MesasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mix': {
+      id: '/mix'
+      path: '/mix'
+      fullPath: '/mix'
+      preLoaderRoute: typeof MixRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/qualidade': {
+      id: '/qualidade'
+      path: '/qualidade'
+      fullPath: '/qualidade'
+      preLoaderRoute: typeof QualidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FilasRoute: FilasRoute,
+  MesasRoute: MesasRoute,
+  MixRoute: MixRoute,
+  QualidadeRoute: QualidadeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

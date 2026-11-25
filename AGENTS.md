@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Bovinus Intelligence
+- Front-end only prototype; all data comes from `src/data/mock.ts` (deterministic seeded generator) — why: user forbade backend/APIs; types there are the contract for a future Spring Boot API.
+- Every page shows the "Dados simulados — protótipo" banner via `Shell` — why: must never claim real computer vision.
+- Dashboard styles are plain CSS `bi-*` classes in `src/styles.css` using tokens (dark graphite + gold) — why: user preferred plain CSS.
+- Charts are hand-written SVG in `Charts.tsx` — why: no chart dependency needed.
