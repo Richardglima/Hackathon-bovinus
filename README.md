@@ -8,7 +8,8 @@ Transformar sinais da jornada do cliente em indicadores para reduzir a dependên
 **Dados integralmente simulados.** Não há integração operacional com câmeras, API ou banco de dados. Benefícios são hipóteses a validar.
 
 ## Demonstração
-- [Vídeo demonstrativo](docs%20media/ChatGPT%202026-11-25%2016-44-15.mp4)
+- [Vídeo demonstrativo com narração (YouTube)](https://youtu.be/2u7EFK9CPmA)
+- [Gravação original sem narração (backup)](docs%20media/ChatGPT%202026-11-25%2016-44-15.mp4)
 - [Prévia Lovable](https://id-preview--b333be96-c014-405d-9023-448cdab2b203.lovable.app) (acesso sujeito às permissões da plataforma).
 
 ## Capturas de tela
